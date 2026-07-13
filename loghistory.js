@@ -19,7 +19,10 @@ const new_tasks_container=document.getElementById("new_tasks");
 //create new task UI
 function create_new_tasks_element(date, previous_tasks, new_tasks){
     const temp_node=card_container.cloneNode(true); 
-    temp_node.querySelector(".span").textContent=date; 
+    const date_split=date.split(" ");
+    temp_node.querySelector("#month").textContent=date_split[0];
+    temp_node.querySelector("#day").textContent=date_split[1];
+
     
     //seperate string
     const previous_tasks_list=previous_tasks.split(",")
@@ -34,5 +37,9 @@ function create_new_tasks_element(date, previous_tasks, new_tasks){
         
     });
 
-
+    card_container.append(temp_node);
 };
+
+
+console.log("RAHHHH")
+create_new_tasks_element("January 15", "cook,clean,dance", "");
