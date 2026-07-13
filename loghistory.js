@@ -1,3 +1,4 @@
+//demo data;
 let previous_logs=[
     {"date":"January 12", 
      "previous_tasks":"x,b,c,d", 
@@ -7,7 +8,7 @@ let previous_logs=[
 ]; 
 
 
-//define elements;
+//define references to elements;
 const card_container=document.getElementById("card-container"); 
 const month_place=document.getElementById("month"); 
 const card_place=document.getElementById("day"); 
@@ -20,6 +21,7 @@ function create_new_tasks_element(date, previous_tasks, new_tasks){
     const temp_node=card_container.cloneNode(true); 
     temp_node.querySelector(".span").textContent=date; 
     
+    //seperate string
     const previous_tasks_list=previous_tasks.split(",")
     console.log(previous_tasks_list);
 
