@@ -10,7 +10,9 @@ body {
     width:350;
 }
 
-#card-container * {
+#card-container {
+  display:flex; 
+  flex-direction: column;
   
 }
 

@@ -37,7 +37,7 @@ function create_new_tasks_element(date, previous_tasks, new_tasks){
         
     });
 
-    card_container.append(temp_node);
+    body.append(temp_node);
 };
 
 
