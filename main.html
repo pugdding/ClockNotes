@@ -2,16 +2,36 @@
     <head> 
         <title>HandOff</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
 
         <style> 
+
+        * {
+            font-family:"Lora";
+            font-weight: 400;
+        }
          #timer{
-            font-size:70px;
-         }
+            font-size:150px;
+            margin-bottom:10px;
+        }
+
+        button {
+            cursor: pointer;
+        }
 
          #session-button{
             padding:10px 20px; 
             border:1px solid black;
             border-radius:16px;
+         }
+
+         .timer-box {
+            display:flex; 
+            flex-direction: column;
+            align-items: center;
          }
             
 
@@ -20,9 +40,12 @@
     </head>
 
     <body> 
+
+        <div style="display:flex; flex-direction: row; justify-content: center;">
         <div class="timer-box">
             <h1 id="timer"><span id="hour">1</span>:<span id="minutes">00</span></h1>
             <button id="session-button">Start Session</button>
+        </div>
 
         </div>
 
@@ -30,9 +53,15 @@
 
 
     <script>
+
+        async function run_timer(){
+            return ""; 
+        }
+
         const sb=document.getElementById("session-button"); 
         sb.addEventListener("click", ()=>{
-            console.log("")
+           run_timer()
+           console.log("Starting Timer...")
         })
     </script>
 
