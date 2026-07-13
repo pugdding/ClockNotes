@@ -1,0 +1,33 @@
+body {
+    font-family: "Outfit";
+    padding:25px 50px;
+}
+
+#card-container{
+    background-color: yellow;
+    padding:10px 20px;
+    border-radius:16px;
+    width:350;
+}
+
+#card-container * {
+  
+}
+
+#task-lists p{
+    font-weight:600;
+    margin-bottom:0px;
+    padding-bottom:0px;
+}
+
+#task-lists {
+    margin-top:0px; 
+    margin-bottom:0px;
+    padding:0px;
+}
+
+#task-lists ul{
+    margin-top:0px;
+    padding-top:0px;
+}
+

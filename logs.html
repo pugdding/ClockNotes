@@ -1,11 +1,39 @@
 <html> 
     <head> 
         <title>View Progress</title>
+        <link rel="stylesheet" href="style.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+</style>
 
     </head>
 
     <body> 
+        <h1>View Progress</h1>
 
+        <div id="card-container"> 
+            <h3><span id="month">January</span> <span id="day">12</span></h3>
+            <div id="task-lists"> 
+                <p>What Was Acheieved</p>
+                <ul id="previous_tasks"> 
+                  <li>Fixed patch for a login in bug (password resetting feature)</li>
+                  <li>Implemented Google X for interpreting error logs</li>
 
+                </ul>
+
+                <p id="new_tasks">Notes For Next Session</p>
+                <ul> 
+                    <li>
+                        Write documentation for the fix. 
+                    </li>
+                    <li>
+                        Write error handling for the log error tool. 
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
     </body>
 </html>
