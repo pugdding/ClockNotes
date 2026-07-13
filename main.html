@@ -1,16 +1,15 @@
 <html> 
     <head> 
         <title>HandOff</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
 
         <style> 
 
         * {
-            font-family:"Lora";
+            font-family:"Outfit";
             font-weight: 400;
         }
          #timer{
@@ -20,11 +19,17 @@
 
         button {
             cursor: pointer;
+            width:70%;
+        
+        }
+
+        button:hover{
+            background-color: yellow;
         }
 
          #session-button{
             padding:10px 20px; 
-            border:1px solid black;
+            border:none;
             border-radius:16px;
          }
 
@@ -32,6 +37,22 @@
             display:flex; 
             flex-direction: column;
             align-items: center;
+         }
+
+         body {
+            padding:50px;
+         }
+
+         #handles{
+            display:flex; 
+            flex-direction: row;
+            gap:20px;
+        
+         }
+
+         #handles a{
+            text-decoration: none;
+            color:black;
          }
             
 
@@ -41,13 +62,36 @@
 
     <body> 
 
+        <div id="handles"> 
+           <a href="#">View Progress</a>
+           <a href="#">Learn More</a>
+
+        </div>
+
         <div style="display:flex; flex-direction: row; justify-content: center;">
+
+
+       <div style="display:flex; flex-direction: column;gap:20px">
         <div class="timer-box">
             <h1 id="timer"><span id="hour">1</span>:<span id="minutes">00</span></h1>
             <button id="session-button">Start Session</button>
         </div>
 
+        <div id="previous-summary"> 
+            <p>Previous Note</p>
         </div>
+
+        </div>
+
+        </div>
+
+
+
+
+        <footer style="margin-top:100vh"> 
+            <p>Read More About It: <a href="https://medium.com/@cognnitivechats/have-you-ever-noticed-that-beginning-a-task-feels-exciting-but-keeping-up-momentum-is-harder-43646321f731"</a>
+            Why Starting Is Psychologically Easier Than Continuing (Medium) </p>
+        </footer>
 
     </body>
 
