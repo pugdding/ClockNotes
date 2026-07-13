@@ -27,10 +27,12 @@
             background-color: yellow;
         }
 
-         #session-button{
+        button{
             padding:10px 20px; 
             border:none;
             border-radius:16px;
+            font-size:15px;
+            margin-top:20px;
          }
 
          .timer-box {
@@ -46,14 +48,44 @@
          #handles{
             display:flex; 
             flex-direction: row;
-            gap:20px;
+            gap:50px;
+            align-items: center;
         
          }
 
-         #handles a{
+         #handles a, #handles p{
             text-decoration: none;
             color:black;
+            background-color: yellow;
+            padding:5px 15px;
          }
+
+         textarea{
+            width:100%;
+            height:80px;
+            padding:10px;
+        }
+
+
+        #show-on-completion{
+            background-color: yellow;
+            padding:20px;
+            border-radius: 20px;
+            border-radius:20px;
+            display:flex; 
+            flex-direction: column;
+            align-items:center;
+        }
+
+        img {
+            width:50%;
+            margin-top:10px;
+        }
+
+        #congrats-message{
+            font-size:35px;
+            margin-bottom:10px;
+        }
             
 
         </style>
@@ -63,8 +95,9 @@
     <body> 
 
         <div id="handles"> 
-           <a href="#">View Progress</a>
-           <a href="#">Learn More</a>
+           <a href="">HANDOFF-WEB</a>
+           <a href="logs.html">VIEW PROGRESS</a>
+           <a href="#">LEARN MORE</a>
 
         </div>
 
@@ -79,6 +112,22 @@
 
         <div id="previous-summary"> 
             <p>Previous Note</p>
+        </div>
+
+        <div id="show-on-completion"> 
+
+            <p id="congrats-message">Congrats on completing your session!</p>
+
+            <img src="https://i.pinimg.com/originals/1d/ea/fb/1deafb64c0c0c1c64700548be28c1a0f.gif">
+
+            <p>What did you accomplish this session?</p>
+            <textarea id="accomplished" placeholder="I accomplished..."></textarea>
+
+            <p>What should you complete next session?</p>
+            <textarea id="next-steps" placeholder="Next session I want to complete..."></textarea>
+
+            <button>Submit</button>
+
         </div>
 
         </div>
@@ -100,6 +149,12 @@
 
         async function run_timer(){
             return ""; 
+        }
+
+        function finished_session(){
+            const accomplished=""; 
+            const next=""; 
+            
         }
 
         const sb=document.getElementById("session-button"); 
