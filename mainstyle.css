@@ -47,6 +47,7 @@
 
          #handles a {
             transition:transform 0.2s ease; 
+            font-weight:500;
          }
 
          #handles a:hover{
