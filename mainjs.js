@@ -20,7 +20,7 @@ const nextsteps_textarea=document.querySelector("#next-steps");
 submission_button.addEventListener("click", ()=>{
     if (!accomplished_textarea.value=="" && !nextsteps_textarea.value==""){
         console.log("Submitted!")
-        completion_pagestyle.display="none"; 
+        completion_page.style.display="none"; 
 
     } else {
         console.log("Cannot be left empty!")
