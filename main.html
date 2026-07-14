@@ -199,8 +199,11 @@
            let timeRemaining = 60 * 60; 
            let timer_placeholder=document.querySelector("#timer");
 
+        
+
             //timer element
-            if (timer_running=="false"){
+            if (timer_running==false){
+                console.log("RHAASHKSHSAJSAKH")
                 const timer = setInterval(() => {
                 //debounce (therefore, timer can only be started once)
                 timer_running=true;
@@ -225,6 +228,10 @@
                 }
             }, 
             1000);
+
+            } else {
+                //the timer is currently running, pause. 
+                console.log("Pause timer request.")
 
             }
             
