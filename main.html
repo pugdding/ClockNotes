@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
+        <link rel="stylesheet" href="mainstyle.css">
 
         <style> 
 
@@ -24,7 +25,7 @@
         }
 
         button:hover{
-            background-color: yellow;
+            background-color: white;
         }
 
         button{
@@ -64,7 +65,7 @@
          #handles a, #handles p{
             text-decoration: none;
             color:black;
-            background-color: yellow;
+            background-color: none;
             padding:5px 15px;
          }
 
@@ -72,11 +73,12 @@
             width:100%;
             height:80px;
             padding:10px;
+            border:none;
         }
 
 
         #show-on-completion{
-            background-color: yellow;
+            background-color: #f0f0f0 ;
             padding:20px;
             border-radius: 20px;
             border-radius:20px;
@@ -117,7 +119,7 @@
     <body> 
 
         <div id="handles"> 
-           <a href="">ABOUT</a>
+           <a href="aboutPage/about.html">ABOUT</a>
            <a href="logs.html">VIEW PROGRESS</a>
            <a href="#">LEARN MORE</a>
 
@@ -142,13 +144,39 @@
 
             <img src="https://i.pinimg.com/originals/1d/ea/fb/1deafb64c0c0c1c64700548be28c1a0f.gif">
 
-            <p>What did you accomplish this session?</p>
+            <p>What did you accomplish this session (Seperate By Commas)</p>
             <textarea id="accomplished" placeholder="I accomplished..."></textarea>
 
-            <p>What should you complete next session?</p>
+            <p>What are next steps? (Seperate By Commas)</p>
             <textarea id="next-steps" placeholder="Next session I want to complete..."></textarea>
 
-            <button>Submit</button>
+            <button id="submit-session-summary">Submit</button>
+
+            <script> 
+                //defined variables
+                const submission_button=document.querySelector("#submit-session-summary"); 
+                const completion_page=document.querySelector("#show-on-completion")
+
+
+                //get form information
+                const tasks_completed=document.querySelector("#accomplished");
+                const new_tasks=document.querySelector("#next-steps");
+
+              
+
+
+                
+                submission_button.addEventListener("click", ()=>{
+                    console.log("Submitted Log")
+                    completion_page.style.display="none";
+
+                    //debugging statements 
+                    console.log(tasks_completed.value); 
+                    console.log(new_tasks.value);
+
+
+                })
+            </script>
 
         </div>
 
@@ -218,7 +246,7 @@
                 timer_placeholder.querySelector("#seconds").textContent=seconds.toString().padStart(2,"0");
                 console.log(`${minutes}:${seconds.toString().padStart(2, "0")}`);
 
-                //decrease the timer
+                //decrease the timera
                 timeRemaining--;
 
                 //timer finished
