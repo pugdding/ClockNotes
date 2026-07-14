@@ -45,31 +45,7 @@
 
             <button id="submit-session-summary">Submit</button>
 
-            <script> 
-                //defined variables
-                const submission_button=document.querySelector("#submit-session-summary"); 
-                const completion_page=document.querySelector("#show-on-completion")
-
-
-                //get form information
-                const tasks_completed=document.querySelector("#accomplished");
-                const new_tasks=document.querySelector("#next-steps");
-
-              
-
-
-                
-                submission_button.addEventListener("click", ()=>{
-                    console.log("Submitted Log")
-                    completion_page.style.display="none";
-
-                    //debugging statements 
-                    console.log(tasks_completed.value); 
-                    console.log(new_tasks.value);
-
-
-                })
-            </script>
+          
 
         </div>
 

@@ -8,13 +8,34 @@ let timer_placeholder = document.querySelector("#timer");
 let timer_running = false;
 let timer = null;
 
+//DEFINE VARIABLES
+const submission_button=document.querySelector("#submit-session-summary"); 
+const completion_page=document.querySelector("#show-on-completion"); 
+
+const accomplished_textarea=document.querySelector("#accomplished"); 
+const nextsteps_textarea=document.querySelector("#next-steps"); 
+
+
+//EVENT HANDELING
+submission_button.addEventListener("click", ()=>{
+    if (!accomplished_textarea.value=="" && !nextsteps_textarea.value==""){
+        console.log("Submitted!")
+        completion_pagestyle.display="none"; 
+
+    } else {
+        console.log("Cannot be left empty!")
+    }
+  
+})
+
+//Print Summary Information
+function print_summary(){
+
+}
+
 
 //Timer Finishes Function
 function timer_complete(){
-                //defined variables
-                const submission_button=document.querySelector("#submit-session-summary"); 
-                const completion_page=document.querySelector("#show-on-completion"); 
-
                 //show (show as flex to maintain styling)
                 completion_page.style.display="flex";
  
