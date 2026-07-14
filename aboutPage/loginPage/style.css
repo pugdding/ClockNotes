@@ -1,0 +1,69 @@
+body{
+    padding:25px;
+    display:flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.card, #reset-password{
+    
+    padding:10px 25px;
+    width:500px;
+
+}
+
+.card h1{
+    margin-top:15px;
+    font-size:80px;
+    margin-bottom:0px;
+}
+
+.card input, #reset-password input{
+    margin-top:5px;
+    border:none;
+    padding:10px 15px;
+    width:100%;
+    border-radius:16px;
+    background-color:white;
+    color:black;
+    border:1px solid black;
+
+
+    
+}
+
+.card p{
+    margin-bottom:0px;
+}
+
+
+.card button, #reset-password button{
+    display:block; 
+    margin-top:20px;
+    width:100%;
+    height:30px;
+    padding:5px 10px;
+    border-radius:16px;
+    background: none;
+    border:1px solid black;
+
+}
+
+.card button:hover, #reset-password button:hover{
+    cursor: pointer;
+}
+
+#notification{
+    font-size:12px;
+    display:none;
+}
+
+*{
+    font-family:"Outfit";
+    border:none;
+    
+}
+
+a {
+    text-decoration: none;
+}

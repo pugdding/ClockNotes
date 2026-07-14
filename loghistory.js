@@ -20,6 +20,8 @@ const new_tasks_container=document.getElementById("new_tasks");
 function create_new_tasks_element(date, previous_tasks, new_tasks){
     const temp_node=card_container.cloneNode(true); 
     const date_split=date.split(" ");
+    console.log(date_split[0])
+    console.log(date_split[1])
     temp_node.querySelector("#month").textContent=date_split[0];
     temp_node.querySelector("#day").textContent=date_split[1];
 
@@ -37,7 +39,7 @@ function create_new_tasks_element(date, previous_tasks, new_tasks){
         
     });
 
-    body.append(temp_node);
+    document.body.append(temp_node);
 };
 
 

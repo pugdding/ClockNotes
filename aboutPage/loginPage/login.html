@@ -1,0 +1,133 @@
+<html> 
+    <head> 
+        <link href="style.css" rel="stylesheet">
+
+
+        
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body> 
+        <div class="card">
+            <h1>Log In Now</h1>
+
+            <p>Username</p>
+            <input id="username-text" autocomplete="off">
+
+            <p>Password</p>
+            <input id="password-text" autocomplete="off" type="password">
+
+            <p id="notification"> 
+                Incorrect Login! Try Again Or <a id="reset-password-link" href="#">Reset Password</a>
+            </p>
+
+
+            <button id="login-button">LOG IN</button>
+            <p>Don't have an account? <a id="create_account_link" href="#">Create one now</a></p>
+
+        </div>
+
+
+        <div id="reset-password"> 
+            <h1>Reset Password</h1>
+            <p>Enter Email</p>
+            <input>
+            
+            <p id="verification-email-sent">Verification email sent to <span id="email">placeholder@email.</span>
+            Please wait 1-3 minutes for the email.
+            </p>
+
+            
+            <button id="verification-button">SEND CODE</button>
+
+        </div>
+
+
+        <div id="create-an-account"> 
+
+
+        </div>
+
+
+
+        <script> 
+        let sample_account_data=[
+            {"username":"puddgging", 
+             "password":"abc123",
+            }
+        ];
+
+        console.log(sample_account_data)
+
+        
+        const login_button=document.getElementById("login-button"); 
+        const notification=document.getElementById("notification");
+        const username_text=document.getElementById("username-text"); 
+        const password_text=document.getElementById("password-text");
+
+        const reset_password_page=document.getElementById("reset-password");
+        const reset_password_link=document.getElementById("reset-password-link"); 
+
+
+        const login_card=document.querySelector(".card");
+
+
+        const verification_email_notif=document.querySelector("#verification-email-sent");
+        verification_email_notif.style.display="none";
+        const verfication_button=document.querySelector("#verification-button");
+
+        verfication_button.addEventListener("click", ()=>{
+            console.log("Requested to send code.");
+            verification_email_notif.style.display="block";
+
+        })
+
+
+        reset_password_page.style.display="none";
+
+
+        //Reset Password Process
+        reset_password_link.addEventListener("click", ()=>{
+            login_card.style.display="none";
+            reset_password_page.style.display="block";
+        })
+
+
+        //Handle Login In Attempts
+        login_button.addEventListener("click", ()=>{
+           
+            sample_account_data.forEach(account=>{
+                if (account["username"]==username_text.value && account["password"]==password_text.value){
+                    console.log("Correct Login!") 
+
+                    //transfer to the page
+                    window.location.href = "../../main.html";
+
+                    //
+                    console.log("Successful Login!")
+                }
+                else {
+                    notification.style.display="block";
+                    
+                    username_text.value=""; 
+                    password_text.value="";   
+                    console.log("Invalid Login")
+                }
+    
+            })
+
+
+
+        })
+
+
+
+
+        </script>
+
+    </body>
+
+</html>

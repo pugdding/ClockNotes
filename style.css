@@ -1,6 +1,10 @@
 body {
     font-family: "Outfit";
-    padding:25px 50px;
+    padding:50px;
+
+    display:flex; 
+    flex-direction: column;
+    gap:30px;
 }
 
 #card-container{
@@ -10,9 +14,18 @@ body {
     width:350;
 }
 
+a{
+    padding:5px 15px;
+    text-decoration: none;
+    background-color: yellow;
+    color:black;
+}
+
+
 #card-container {
   display:flex; 
   flex-direction: column;
+  gap:10px;
   
 }
 

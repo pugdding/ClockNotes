@@ -53,6 +53,14 @@
         
          }
 
+         #handles a {
+            transition:transform 0.2s ease; 
+         }
+
+         #handles a:hover{
+            transform:scale(1.05);
+         }
+
          #handles a, #handles p{
             text-decoration: none;
             color:black;
@@ -77,6 +85,8 @@
             align-items:center;
         }
 
+        
+
         img {
             width:50%;
             margin-top:10px;
@@ -84,7 +94,19 @@
 
         #congrats-message{
             font-size:35px;
-            margin-bottom:10px;
+            margin-bottom:0px;
+            margin-top:0px;
+        }
+
+        #show-on-completion button{
+            color:black;
+            font-size:15px;
+    
+        }
+
+        #show-on-completion img {
+          
+            margin-top:0px;
         }
             
 
@@ -95,7 +117,7 @@
     <body> 
 
         <div id="handles"> 
-           <a href="">HANDOFF-WEB</a>
+           <a href="">ABOUT</a>
            <a href="logs.html">VIEW PROGRESS</a>
            <a href="#">LEARN MORE</a>
 
@@ -106,7 +128,7 @@
 
        <div style="display:flex; flex-direction: column;gap:20px">
         <div class="timer-box">
-            <h1 id="timer"><span id="hour">1</span>:<span id="minutes">00</span></h1>
+            <h1 id="timer"><span id="minutes">60</span>:<span id="seconds">00</span></h1>
             <button id="session-button">Start Session</button>
         </div>
 
@@ -147,6 +169,9 @@
 
     <script>
 
+        const session_button=document.querySelector("#session-button"); 
+        
+
         async function run_timer(){
             return ""; 
         }
@@ -158,10 +183,42 @@
         }
 
         const sb=document.getElementById("session-button"); 
+
         sb.addEventListener("click", ()=>{
-           run_timer()
+          
+           //debug statement 
            console.log("Starting Timer...")
+           session_button.textContent="Pause Timer";
+           
+            //timer code snipet; 
+           let timer_running=false; 
+
+           //timer information
+           let timeRemaining = 60 * 60; 
+           let timer_placeholder=document.querySelector("#timer");
+
+
+            const timer = setInterval(() => {
+                timer_running=true;
+
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+
+                
+                timer_placeholder.querySelector("#minutes").textContent=minutes;
+                timer_placeholder.querySelector("#seconds").textContent=seconds.toString().padStart(2,"0");
+                console.log(`${minutes}:${seconds.toString().padStart(2, "0")}`);
+
+                timeRemaining--;
+
+                if (timeRemaining < 0) {
+                    clearInterval(timer);
+                    console.log("Time's up!");
+                }
+            }, 1000);
         })
+
+
     </script>
 
 

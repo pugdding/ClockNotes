@@ -1,0 +1,27 @@
+body{
+    padding:50px;
+}
+
+* {
+    font-family:"Outfit";
+}
+
+button{
+    padding:10px 100px;
+    background-color: yellow;
+    border:none;
+    font-size:20px;
+    display:block;
+    margin:0 auto;
+    border-radius:16px;
+    transition:transform 0.2s ease; 
+}
+
+button:hover{
+    transform: scale(1.05);
+    cursor:pointer;
+}
+
+h1{
+    font-size:45px;
+}
