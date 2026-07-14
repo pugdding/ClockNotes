@@ -1,57 +1,50 @@
+// Define Variables
+const session_button = document.querySelector("#session-button");
+const start_timer_button = document.getElementById("session-button");
 
-       //Define Variables
-       const session_button=document.querySelector("#session-button"); 
-       const start_timer_button=document.getElementById("session-button"); 
+// Timer Information (persists across clicks)
+let timeRemaining = 60 * 60;
+let timer_placeholder = document.querySelector("#timer");
+let timer_running = false;
+let timer = null;
 
-        //Clicked start on session button
-        start_timer_button.addEventListener("click", ()=>{
-          
-           //Debug Statement
-           console.log("Starting Timer...")
-           session_button.textContent="Pause Timer";
-           
-            //Timer Code Snippet
-           let timer_running=false; 
+function toggleTimer() {
+  if (!timer_running) {
+    // START
+    timer_running = true;
+    console.log("Starting timer");
+    session_button.textContent = "Pause Timer";
 
-           //Timer Information
-           let timeRemaining = 60 * 60; 
-           let timer_placeholder=document.querySelector("#timer");
+    timer = setInterval(() => {
+      const minutes = Math.floor(timeRemaining / 60);
+      const seconds = timeRemaining % 60;
 
-        
+      timer_placeholder.querySelector("#minutes").textContent = minutes;
+      timer_placeholder.querySelector("#seconds").textContent = seconds
+        .toString()
+        .padStart(2, "0");
 
-            //timer element
-            if (timer_running==false){
-                console.log("RHAASHKSHSAJSAKH")
-                const timer = setInterval(() => {
-                //debounce (therefore, timer can only be started once)
-                timer_running=true;
+      console.log(`${minutes}:${seconds.toString().padStart(2, "0")}`);
 
-                //math calculations
-                const minutes = Math.floor(timeRemaining / 60);
-                const seconds = timeRemaining % 60;
+      timeRemaining--;
 
+      if (timeRemaining < 0) {
+        clearInterval(timer);
+        timer_running = false;
+        console.log("Time's up!");
+      }
+    }, 1000);
 
-                //update timer on the UI
-                timer_placeholder.querySelector("#minutes").textContent=minutes;
-                timer_placeholder.querySelector("#seconds").textContent=seconds.toString().padStart(2,"0");
-                console.log(`${minutes}:${seconds.toString().padStart(2, "0")}`);
+  } else {
+    // PAUSE
+    clearInterval(timer);
+    timer_running = false;
+    console.log("Timer paused.");
+    session_button.textContent = "Start Timer";
+  }
+}
 
-                //decrease the timera
-                timeRemaining--;
-
-                //timer finished
-                if (timeRemaining < 0) {
-                    clearInterval(timer);
-                    console.log("Time's up!");
-                }
-            }, 
-            1000);
-
-            } else {
-                //the timer is currently running, pause. 
-                console.log("Pause timer request.")
-
-            }
-            
-        })
-
+// Clicked session button
+start_timer_button.addEventListener("click", () => {
+  toggleTimer();
+});
